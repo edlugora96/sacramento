@@ -1,7 +1,7 @@
 HOST=$1
 USER=$2
 PASSWD=$3
-LOCALPATH='public/'
+LOCALPATH='../public/'
 FILE='*'
 DIR='.'
 

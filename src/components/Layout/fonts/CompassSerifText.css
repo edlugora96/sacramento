@@ -1,0 +1,15 @@
+@font-face {
+font-family:"CompassSerifText";
+src:url("./CompassSerifText-Regular.eot") format("woff2"),url("./CompassSerifText-Regular.woff2") format("woff"),url("./CompassSerifText-Regular.woff") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;
+}
+@font-face {
+font-family:"CompassSans";
+src:url("./CompassSans-Regular.eot") format("woff2"),url("./CompassSans-Regular.woff2") format("woff"),url("./CompassSans-Regular.woff") format("opentype");
+font-display:auto;font-style:normal;font-weight:400;
+}
+article {
+  font-size: 18px;
+}
+.compassSerif { font-family: "CompassSerifText",serif; }
+.compassSans { font-family: "CompassSans",serif; }

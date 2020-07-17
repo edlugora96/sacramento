@@ -1,0 +1,45 @@
+@import url("https://p.typekit.net/p.css?s=1&k=rum8dmi&ht=tk&f=35652&a=735425&app=typekit&e=css");
+
+@font-face {
+  font-family: "turquoise";
+  src: url("https://use.typekit.net/af/1ccb43/00000000000000003b9b085b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff2"),
+    url("https://use.typekit.net/af/1ccb43/00000000000000003b9b085b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("woff"),
+    url("https://use.typekit.net/af/1ccb43/00000000000000003b9b085b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3")
+      format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "CompassSerifText";
+  src: url("./fonts/CompassSerifText-Regular.eot") format("woff2"),
+    url("./fonts/CompassSerifText-Regular.woff2") format("woff"),
+    url("./fonts/CompassSerifText-Regular.woff") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: "CompassSans";
+  src: url("./fonts/CompassSans-Regular.eot") format("woff2"),
+    url("./fonts/CompassSans-Regular.woff2") format("woff"),
+    url("./fonts/CompassSans-Regular.woff") format("opentype");
+  font-display: auto;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.tk-turquoise {
+  font-family: "turquoise", serif;
+}
+article {
+  font-size: 18px;
+}
+.compassSerif {
+  font-family: "CompassSerifText", serif;
+}
+.compassSans {
+  font-family: "CompassSans", serif;
+}
