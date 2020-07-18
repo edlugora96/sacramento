@@ -1,17 +1,16 @@
 import React from "react"
-import { Link } from "gatsby"
 
-import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import Header from "../components/Header"
 
 const IndexPage = () => (
-  <Layout>
+  <>
     <SEO title="Home" />
+    <Header siteTitle="3439Sacramento" />
     <h1>New listing...</h1>
     <h2>Building...</h2>
     <p>Welcome to your new site 3439Sacramento.</p>
-  </Layout>
+  </>
 )
 
 export default IndexPage
