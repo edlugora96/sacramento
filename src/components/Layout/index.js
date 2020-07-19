@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect } from "react"
 import "semantic-ui-css/semantic.min.css"
 import { useStore, StoreProvider } from "../../lib/store"
 import { Global } from "./styles"
@@ -12,7 +12,7 @@ import "./animations.css"
 const handlerScroll = setScroll => setScroll(window.scrollY)
 
 const Layout = ({ children }) => {
-  const { loading, setScroll, stopLoading } = useStore()
+  const { setScroll, stopLoading } = useStore()
   useEffect(() => {
     const handler_scroll = handlerScroll.bind(null, setScroll)
     window.addEventListener("scroll", handler_scroll)
@@ -29,7 +29,7 @@ const Layout = ({ children }) => {
   return (
     <>
       <div id="portal"></div>
-      <Loading loading={loading} />
+      <Loading />
       <Global />
       <Navbar />
       <main>{children}</main>

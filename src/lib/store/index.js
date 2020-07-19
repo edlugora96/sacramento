@@ -4,6 +4,10 @@ import { observable, action } from "mobx"
 
 export const store = observable(
   {
+    currentMainSlide: 0,
+    setCurrentMainSlide(index) {
+      store.currentMainSlide = index
+    },
     scroll: 0,
     setScroll(scroll) {
       store.scroll = scroll
@@ -20,6 +24,7 @@ export const store = observable(
     setScroll: action,
     startLoading: action,
     stopLoading: action,
+    setCurrentMainSlide: action,
   }
 )
 

@@ -5,27 +5,31 @@ import Header from "../components/Header"
 import Gallery from "../components/Gallery"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
+import { AnimateStaging } from "../components/AnimateComponent"
+
+const ImageGalleryGraphQLGatsby = props => {
+  return (
+    <Img
+      // imgStyle={props?.thumbs ? { position: "" } : {}}
+      // style={props?.thumbs ? { position: "" } : {}}
+      alt={props.node.name}
+      fluid={props.node.childImageSharp.fluid}
+    />
+  )
+}
 
 const IndexPage = ({ data }) => {
   return (
     <>
       <SEO title="Home" />
       <Header siteTitle="3439Sacramento" />
-      {
+      <AnimateStaging>
         <Gallery>
-          {props => {
-            console.log(data)
-            return data?.allFile.edges.map(file => (
-              <div onClick={() => props?.setOpenOverlay(true)}>
-                <Img
-                  alt={file.node.name}
-                  fluid={file.node.childImageSharp.fluid}
-                />
-              </div>
-            ))
-          }}
+          {data.allFile.edges.map((file, index) => (
+            <ImageGalleryGraphQLGatsby key={index} {...file} />
+          ))}
         </Gallery>
-      }
+      </AnimateStaging>
       <h1>New listing...</h1>
       <h2>Building...</h2>
       <p>Welcome to your new site 3439Sacramento.</p>

@@ -23,16 +23,30 @@ export const Slider = styled.section`
   & .slick-slider:hover svg {
     opacity: 1;
   }
+  & .slick-slider + .slick-slider {
+    margin-top: 5px;
+  }
 `
 export const SliderOverlay = styled.div`
-  & > section {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    z-index: 10;
-    top: 0px;
-    left: 0px;
-    background-color: rgba(0, 0, 0, 0.9);
+  transition: opacity 0.3s linear;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  top: 0px;
+  left: 0px;
+  background-color: rgba(0, 0, 0, 0.9);
+  & .slick-slider svg {
+    display: block;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+    top: calc(50vh - 13px);
+    transition: all 0.2s ease-in;
+  }
+  & .slick-slider:hover svg {
+    opacity: 1;
   }
   & .slick-slide img {
     width: auto !important;
@@ -40,14 +54,6 @@ export const SliderOverlay = styled.div`
     max-width: 80%;
     transform: translate(-50%, 0);
     left: 50% !important;
-  }
-  & .slick-slider svg {
-    display: block;
-    position: absolute;
-    cursor: pointer;
-    z-index: 2;
-    top: calc(50% - 13px);
-    transition: all 0.2s ease-in;
   }
 `
 export const ButtonCloseOverlay = styled.button`

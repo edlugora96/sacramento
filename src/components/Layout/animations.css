@@ -14,3 +14,20 @@
 .fade-exit-active {
   opacity: 0;
 }
+
+.fade-in-out {
+  transition: opacity 0.3s linear;
+}
+
+.fade-in-out-enter {
+  opacity: 0;
+}
+.fade-in-out-enter-active {
+  opacity: 1;
+}
+.fade-in-out-exit {
+  opacity: 1;
+}
+.fade-in-out-exit-active {
+  opacity: 0;
+}
