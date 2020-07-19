@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from "react"
+import React, { useState, useEffect } from "react"
 import Slick from "react-slick"
 import { Slider, SliderOverlay } from "./style"
 import ReactDOM from "react-dom"
@@ -40,42 +40,48 @@ const NextArrow = props => (
 
 const OverlaySlick = observer(({ openOverlay, setOpenOverlay, children }) => {
   const { currentMainSlide } = useStore()
-  return (
-    document.querySelector("#portal") &&
-    ReactDOM.createPortal(
-      <CSSTransition
-        in={openOverlay}
-        classNames="fade-in-out"
-        unmountOnExit
-        timeout={300}
-      >
-        <SliderOverlay>
-          <Slick
-            initialSlide={currentMainSlide}
-            dots={false}
-            prevArrow={<PrevArrow />}
-            nextArrow={<NextArrow />}
-          >
-            {children}
-          </Slick>
-          <BtnCloseOverlay onClick={() => setOpenOverlay(false)} />
-        </SliderOverlay>
-      </CSSTransition>,
-      document.querySelector("#portal")
-    )
+  return ReactDOM.createPortal(
+    <CSSTransition
+      in={openOverlay}
+      classNames="fade-in-out"
+      unmountOnExit
+      timeout={300}
+    >
+      <SliderOverlay>
+        <Slick
+          initialSlide={currentMainSlide}
+          dots={false}
+          prevArrow={<PrevArrow />}
+          nextArrow={<NextArrow />}
+        >
+          {children}
+        </Slick>
+        <BtnCloseOverlay onClick={() => setOpenOverlay(false)} />
+      </SliderOverlay>
+    </CSSTransition>,
+    document.querySelector("#portal")
   )
 })
 const Gallery = ({ children }) => {
   const [openOverlay, setOpenOverlay] = useState(false)
+  const [loadOverlay, setLoadOverlay] = useState(false)
   const [mainSlider, setMainSlider] = useState(null)
   const [thumbsSlider, setThumbsSlider] = useState(null)
   const { currentMainSlide, setCurrentMainSlide } = useStore()
+  useEffect(() => {
+    setLoadOverlay(true)
+  }, [])
   return (
     <Slider>
       <div>
-        <OverlaySlick openOverlay={openOverlay} setOpenOverlay={setOpenOverlay}>
-          {children}
-        </OverlaySlick>
+        {loadOverlay && (
+          <OverlaySlick
+            openOverlay={openOverlay}
+            setOpenOverlay={setOpenOverlay}
+          >
+            {children}
+          </OverlaySlick>
+        )}
 
         <BtnOpenOverlay onClick={() => setOpenOverlay(true)} />
         <Slick
