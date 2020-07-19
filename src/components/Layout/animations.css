@@ -1,0 +1,16 @@
+.fade {
+  transition: opacity 1s linear;
+}
+
+.fade-enter {
+  opacity: 1;
+}
+.fade-enter-active {
+  opacity: 1;
+}
+.fade-exit {
+  opacity: 1;
+}
+.fade-exit-active {
+  opacity: 0;
+}

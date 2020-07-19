@@ -1,4 +1,5 @@
 import React from "react"
+import { observer } from "mobx-react"
 import {
   Header,
   HeaderBackground,
@@ -6,8 +7,11 @@ import {
   Hero,
   HeaderMoreInfo,
 } from "./style"
-const Head = () => (
-  <>
+import { useStore } from "../../lib/store"
+
+const Head = observer(() => {
+  const { scroll } = useStore()
+  return (
     <Header>
       <HeaderBackground />
       <BackgroundOpacity />
@@ -18,7 +22,7 @@ const Head = () => (
           <br />
         </div>
       </Hero>
-      <HeaderMoreInfo>
+      <HeaderMoreInfo scrolled={scroll !== 0}>
         <div>
           <div>
             <span>4 Bedrooms</span>
@@ -34,7 +38,7 @@ const Head = () => (
         </div>
       </HeaderMoreInfo>
     </Header>
-  </>
-)
+  )
+})
 
 export default Head

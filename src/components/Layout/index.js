@@ -1,38 +1,47 @@
-import React from "react"
-import PropTypes from "prop-types"
-// import { useStaticQuery, graphql } from "gatsby"
+import React, { useEffect, useState } from "react"
 import "semantic-ui-css/semantic.min.css"
-
+import { useStore, StoreProvider } from "../../lib/store"
 import { Global } from "./styles"
 import Navbar from "../Navbar"
 import Footer from "../Footer"
+import FooterMenu from "../FooterMenu"
+import Loading from "../Loading"
 import "./fonts.css"
+import "./animations.css"
+
+const handlerScroll = setScroll => setScroll(window.scrollY)
 
 const Layout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
-
+  const { loading, setScroll, stopLoading } = useStore()
+  useEffect(() => {
+    const handler_scroll = handlerScroll.bind(null, setScroll)
+    window.addEventListener("scroll", handler_scroll)
+    window.addEventListener("load", handler_scroll)
+    const fadeLoad = setTimeout(() => {
+      stopLoading()
+    }, 2000)
+    return () => {
+      clearTimeout(fadeLoad)
+      window.removeEventListener("scroll", handler_scroll)
+      window.removeEventListener("load", handler_scroll)
+    }
+  }, [])
   return (
     <>
+      <div id="portal"></div>
+      <Loading loading={loading} />
       <Global />
       <Navbar />
-
-      {/* <Header siteTitle={data.site.siteMetadata.title} /> */}
       <main>{children}</main>
+      <FooterMenu />
       <Footer />
     </>
   )
 }
 
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
-}
-
-export default Layout
+const LayoutProvider = ({ children }) => (
+  <StoreProvider>
+    <Layout>{children}</Layout>
+  </StoreProvider>
+)
+export default LayoutProvider

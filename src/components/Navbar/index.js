@@ -1,10 +1,13 @@
 import React from "react"
+import { observer } from "mobx-react"
 import { HamburgerMenu, Nav } from "./styles"
 import { BeautyLink, Link } from "../commonStyles"
+import { useStore } from "../../lib/store"
 
-function Navbar() {
+const Navbar = observer(() => {
+  const { scroll } = useStore()
   return (
-    <Nav>
+    <Nav scrolled={scroll !== 0}>
       <HamburgerMenu>
         <i></i>
       </HamburgerMenu>
@@ -15,7 +18,7 @@ function Navbar() {
         <span>Features</span>
       </BeautyLink>
       <BeautyLink to="/"> </BeautyLink>
-      <BeautyLink to="/">
+      <BeautyLink to="/map">
         <span>Map</span>
       </BeautyLink>
       <BeautyLink to="/">
@@ -26,6 +29,6 @@ function Navbar() {
       </Link>
     </Nav>
   )
-}
+})
 
 export default Navbar

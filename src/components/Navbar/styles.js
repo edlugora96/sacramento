@@ -31,6 +31,12 @@ export const Nav = styled.nav`
     justify-items: center;
     align-items: center;
   }
+  ${({ scrolled }) =>
+    scrolled &&
+    `
+    background-color: #000;
+    padding: 20px;
+  `}
 `
 
 export const HamburgerMenu = styled.span`

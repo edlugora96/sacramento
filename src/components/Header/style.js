@@ -27,7 +27,8 @@ export const HeaderMoreInfo = styled.div`
     padding-right: 36px;
     transition: background 0.5s;
     display: grid;
-    background-color: rgba(0, 0, 0, 0.3);
+    background-color: ${({ scrolled }) =>
+      scrolled ? "#000" : "rgba(0, 0, 0, 0.3)"};
   }
   & > *:first-child div > span {
     border-right: 1px solid #fff;
@@ -39,7 +40,8 @@ export const HeaderMoreInfo = styled.div`
   }
   & > *:last-child {
     transition: all 0.5s;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: ${({ scrolled }) =>
+      scrolled ? "#fff" : "rgba(255, 255, 255, 0.5)"};
     display: grid;
     grid-column-gap: 1rem;
     align-items: center;

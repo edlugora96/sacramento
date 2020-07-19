@@ -1,10 +1,32 @@
-import styled, { css } from "styled-components"
+import styled, { css, keyframes } from "styled-components"
 import { Link as GatsbyLink } from "gatsby"
 
-const baseLinkStyles = css`
-  color: ${props => (props.dark ? "#3e4247" : "#fff")};
+export const fadeInUp = keyframes`
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+`
+
+export const animation = css`
+  ${fadeInUp} 0.5s ease-out both;
+`
+
+export const AnimateComponent = styled.section`
+  animation: ${({ start }) => (start ? animation : "none")};
+  visibility: ${({ start }) => (start ? "visible" : "hidden")};
+`
+
+const linkCss = css`
+  color: ${({ dark }) => (dark ? "#3e4247" : "#fff")};
   &:hover {
-    color: ${props => (props.dark ? "#3e4247" : "#fff")};
+    color: ${({ dark }) => (dark ? "#3e4247" : "#fff")};
   }
   &:hover span:after {
     width: 100%;
@@ -18,9 +40,9 @@ const baseLinkStyles = css`
     position: absolute;
     left: 0;
     bottom: 0;
-    height: ${props => (props.dark ? "1px" : "2px")};
+    height: ${({ dark }) => (dark ? "1px" : "2px")};
     width: 0;
-    background: ${props => (props.dark ? "#ccc" : "#fff")};
+    background: ${({ dark }) => (dark ? "#ccc" : "#fff")};
     transition: all 0.5s ease;
   }
   ${({ outline }) =>
@@ -49,13 +71,14 @@ const baseLinkStyles = css`
 `
 
 export const BeautyLink = styled(GatsbyLink)`
-  ${baseLinkStyles}
+  ${linkCss}
 `
 
 export const Link = styled.a`
-  ${baseLinkStyles}
+  ${linkCss}
 `
-export const NiceBtn = styled.button`
+
+export const niceCss = css`
   max-width: fit-content;
   max-width: max-content;
   display: flex;
@@ -77,11 +100,25 @@ export const NiceBtn = styled.button`
   ${({ smallX1 }) => smallX1 && "padding: 14px;"}
   ${({ alternative }) =>
     alternative &&
-    "background-color: rgba(0,0,0,0.4); border: 1px solid rgba(0,0,0,0.3);"}
+    `background-color: rgba(0,0,0,0.4); 
+    border: 1px solid rgba(0,0,0,0.3) ;`}
+  ${({ white }) =>
+    white &&
+    `
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #000;
+  `}
   &:hover{
       background-color: #fff;
       color: #000;
       border: 1px solid #000;
   }
+`
 
+export const NiceBtn = styled.button`
+  ${niceCss}
+`
+export const NiceLink = styled(GatsbyLink)`
+  ${niceCss}
 `

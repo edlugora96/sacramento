@@ -3,9 +3,10 @@ import styled from "styled-components"
 export const Footer = styled.footer`
   background-color: #fff;
   position: relative;
-  display: grid;
+  display: flex;
   padding: 65px 50px;
-  & div:first-child {
+  flex-direction: column;
+  & section:first-child {
     grid-area: sitemap;
     display: flex;
     flex-flow: column;
@@ -13,7 +14,7 @@ export const Footer = styled.footer`
   & * {
     line-height: 24px;
   }
-  & div > div:first-child {
+  & section > div:first-child {
     margin-bottom: 1rem;
   }
 `
