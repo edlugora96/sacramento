@@ -4,6 +4,16 @@ import { observable, action } from "mobx"
 
 export const store = observable(
   {
+    menuOpen: false,
+    toggleMenu() {
+      store.menuOpen = !store.menuOpen
+    },
+    closeMenu() {
+      store.menuOpen = false
+    },
+    openMenu() {
+      store.menuOpen = true
+    },
     currentMainSlide: 0,
     setCurrentMainSlide(index) {
       store.currentMainSlide = index
@@ -21,6 +31,9 @@ export const store = observable(
     },
   },
   {
+    toggleMenu: action,
+    closeMenu: action,
+    openMenu: action,
     setScroll: action,
     startLoading: action,
     stopLoading: action,

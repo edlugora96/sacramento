@@ -5,6 +5,7 @@ import { Global } from "./styles"
 import Navbar from "../Navbar"
 import Footer from "../Footer"
 import FooterMenu from "../FooterMenu"
+import MainMenu from "../MainMenu"
 import Loading from "../Loading"
 import "./fonts.css"
 import "./animations.css"
@@ -28,9 +29,10 @@ const Layout = ({ children }) => {
   }, [])
   return (
     <>
+      <Global />
       <div id="portal"></div>
       <Loading />
-      <Global />
+      <MainMenu />
       <Navbar />
       <main>{children}</main>
       <FooterMenu />

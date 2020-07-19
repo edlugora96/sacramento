@@ -78,6 +78,10 @@ export const Link = styled.a`
   ${linkCss}
 `
 
+export const BeautyButton = styled.button`
+  ${linkCss}
+`
+
 export const niceCss = css`
   max-width: fit-content;
   max-width: max-content;

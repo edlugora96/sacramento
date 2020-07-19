@@ -5,12 +5,16 @@ import { BeautyLink, Link } from "../commonStyles"
 import { useStore } from "../../lib/store"
 
 const Navbar = observer(() => {
-  const { scroll } = useStore()
+  const { menuOpen, scroll, toggleMenu } = useStore()
   return (
     <Nav scrolled={scroll !== 0}>
-      <HamburgerMenu>
-        <i></i>
-      </HamburgerMenu>
+      {!menuOpen ? (
+        <HamburgerMenu onClick={toggleMenu}>
+          <i></i>
+        </HamburgerMenu>
+      ) : (
+        <div style={{ height: "36px", width: "35px" }}></div>
+      )}
       <BeautyLink to="/">
         <span>Gallery</span>
       </BeautyLink>
