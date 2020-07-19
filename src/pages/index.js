@@ -3,19 +3,13 @@ import React from "react"
 import SEO from "../components/seo"
 import Header from "../components/Header"
 import Gallery from "../components/Gallery"
+import SectionLinking from "../components/landing/SectionLinking"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { AnimateStaging } from "../components/AnimateComponent"
 
 const ImageGalleryGraphQLGatsby = props => {
-  return (
-    <Img
-      // imgStyle={props?.thumbs ? { position: "" } : {}}
-      // style={props?.thumbs ? { position: "" } : {}}
-      alt={props.node.name}
-      fluid={props.node.childImageSharp.fluid}
-    />
-  )
+  return <Img alt={props.node.name} fluid={props.node.childImageSharp.fluid} />
 }
 
 const IndexPage = ({ data }) => {
@@ -30,9 +24,15 @@ const IndexPage = ({ data }) => {
           ))}
         </Gallery>
       </AnimateStaging>
-      <h1>New listing...</h1>
-      <h2>Building...</h2>
-      <p>Welcome to your new site 3439Sacramento.</p>
+      <AnimateStaging>
+        <SectionLinking dark to="/" title="Features" />
+      </AnimateStaging>
+      <AnimateStaging>
+        <SectionLinking to="/" title="Neighborhood" />
+      </AnimateStaging>
+      <AnimateStaging>
+        <SectionLinking dark to="/" title="Map and Directions" />
+      </AnimateStaging>
     </>
   )
 }
