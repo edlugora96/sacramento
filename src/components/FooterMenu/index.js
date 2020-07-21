@@ -2,11 +2,22 @@ import React from "react"
 import { FooterMenu } from "./style"
 import { NiceLink } from "../commonStyles"
 
+/*
+{
+  home: [features, map, contact],
+  gallery: [features, home, map, contact]
+  features: [features, home, map, contact]
+
+}
+
+*/
+
 const FootMenu = ({
   menu = [
+    { name: "Features", href: "/features" },
     { name: "Home", href: "/" },
-    { name: "Map and directions", href: "/" },
-    { name: "Features", href: "/" },
+    { name: "Map and directions", href: "/map" },
+    { name: "Schedule a Showing", href: "/contact" },
   ],
 }) => (
   <FooterMenu>

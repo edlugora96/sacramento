@@ -1,6 +1,6 @@
 import React, { useRef, useState } from "react"
 import { Footer, ContactSection, PhoneArea, ShareBtnArea } from "./style"
-import { BeautyLink, Link, NiceBtn } from "../commonStyles"
+import { BeautyLink, Link, NiceLink } from "../commonStyles"
 import { AnimateStaging } from "../AnimateComponent"
 
 const LogoFooter = () => (
@@ -25,16 +25,16 @@ const ContactInfo = () => (
       <BeautyLink dark to="/stats">
         <span>Stats</span>
       </BeautyLink>
-      <BeautyLink dark to="/property-highlights">
+      <BeautyLink dark to="/gallery">
         <span>Gallery</span>
       </BeautyLink>
-      <BeautyLink dark to="/gallery">
+      <BeautyLink dark to="/features">
         <span>Features</span>
       </BeautyLink>
-      <BeautyLink dark to="/features">
+      <BeautyLink dark to="/contact">
         <span>Schedule a showing</span>
       </BeautyLink>
-      <BeautyLink dark to="/contact">
+      <BeautyLink dark to="/neighborhood">
         <span>Neighborhood</span>
       </BeautyLink>
       <BeautyLink dark to="/map">
@@ -82,9 +82,9 @@ const ContactInfo = () => (
     </AnimateStaging>
     <ShareBtnArea>
       <AnimateStaging>
-        <NiceBtn smallX2 normal>
+        <NiceLink to="/contact" smallX2 normal>
           Contact | Schedule a Showing
-        </NiceBtn>
+        </NiceLink>
       </AnimateStaging>
     </ShareBtnArea>
   </ContactSection>

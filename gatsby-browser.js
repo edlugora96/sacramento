@@ -12,6 +12,6 @@ export const onRouteUpdate = () => {
   store.closeMenu()
   timer.time
     ? clearTimeout(timer.time)
-    : setTimeout(store.stopLoading, count ? 2000 : 100)
+    : setTimeout(store.stopLoading, count ? 2000 : 200)
   count = 0
 }

@@ -23,7 +23,7 @@ const ContactView = styled.div`
   }
 `
 
-const Contact = ({ data }) => {
+const Contact = () => {
   return (
     <>
       <Header degEffect image={headerImageContactPage}>
