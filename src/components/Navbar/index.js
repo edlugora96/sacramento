@@ -15,17 +15,17 @@ const Navbar = observer(() => {
       ) : (
         <div style={{ height: "36px", width: "35px" }}></div>
       )}
-      <BeautyLink to="/">
+      <BeautyLink to="/gallery">
         <span>Gallery</span>
       </BeautyLink>
-      <BeautyLink to="/">
+      <BeautyLink to="/features">
         <span>Features</span>
       </BeautyLink>
       <BeautyLink to="/"> </BeautyLink>
       <BeautyLink to="/map">
         <span>Map</span>
       </BeautyLink>
-      <BeautyLink to="/">
+      <BeautyLink to="/contact">
         <span>Contact</span>
       </BeautyLink>
       <Link href="tel:4152716390">

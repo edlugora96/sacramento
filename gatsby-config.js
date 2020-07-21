@@ -1,8 +1,11 @@
+require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `3439Sacramento`,
     description: `3439Sacramento new listing.`,
     author: `@edlugora`,
+    googleMapKey: process.env.GOOGLE_MAPS_STATIC_API_KEY,
+    googleRecaptchaKey: process.env.GOOGLE_RECAPTCHA_KEY,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -16,6 +19,7 @@ module.exports = {
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-recaptcha`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

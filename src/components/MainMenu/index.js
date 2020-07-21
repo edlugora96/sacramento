@@ -36,13 +36,13 @@ const Menu = observer(() => {
           </BeautyLink>
         </div>
         <AnimateStaging disconnect={false} delay={500}>
-          <BeautyLink>
+          <BeautyLink to="/gallery">
             <span>Gallery</span>
           </BeautyLink>
         </AnimateStaging>
 
         <AnimateStaging disconnect={false} delay={500}>
-          <BeautyLink>
+          <BeautyLink to="/features">
             <span>Features</span>
           </BeautyLink>
         </AnimateStaging>

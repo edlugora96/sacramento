@@ -1,11 +1,21 @@
 import styled from "styled-components"
-import headerBackground from "../../assets/headerBackground.jpg"
+import imageDefault from "../../assets/kirkpeggylulu.png"
 
 export const Header = styled.header`
   background-color: #000;
   position: relative;
   min-height: 100vh;
   max-height: 100vh;
+
+  & > div > h2 {
+    display: block;
+    color: #fff;
+    text-align: left;
+    margin: 10px 0 15px;
+    font-size: 45px;
+    margin-left: 115px;
+    margin-bottom: 2.5rem;
+  }
 `
 
 export const HeaderMoreInfo = styled.div`
@@ -57,18 +67,34 @@ export const HeaderBackground = styled.div`
   background-color: #000;
   background-size: cover;
   background-repeat: no-repeat;
-  background-image: url(${headerBackground});
+  background-image: url(${({ image }) => image || imageDefault});
 `
 
 export const BackgroundOpacity = styled.div`
-  background-color: #000;
-  opacity: 0.4;
   position: absolute;
   z-index: 2;
-  top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  ${({ degEffect }) =>
+    degEffect
+      ? `
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient( 180deg, transparent, rgba(0, 0, 0, 0.4) 68%, rgba(0, 0, 0, 0.65) 86%, rgba(0, 0, 0, 0.95) );
+  bottom: 0;
+  
+  `
+      : `
+  top: 0;
+  background-color: #000;
+  opacity: 0.4;
+  
+  `}
 `
 
 export const Hero = styled.div`

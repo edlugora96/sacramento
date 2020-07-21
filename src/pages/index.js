@@ -7,16 +7,43 @@ import SectionLinking from "../components/landing/SectionLinking"
 import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { AnimateStaging } from "../components/AnimateComponent"
+import headerBackground from "../assets/headerBackground.jpg"
 
 const ImageGalleryGraphQLGatsby = props => {
   return <Img alt={props.node.name} fluid={props.node.childImageSharp.fluid} />
 }
 
+const Hero = () => (
+  <div>
+    <h1>3439 Sacramento</h1>
+    <h3>$ 4,250,000</h3>
+    <br />
+  </div>
+)
+
+const MoreInfo = () => (
+  <>
+    <div>
+      <div>
+        <span>4 Bedrooms</span>
+        <span>3 Full Baths</span>
+        <span>1 Half Bath</span>
+        <span>3,620 sq. ft.</span>
+      </div>
+    </div>
+    <div>
+      <a>
+        <span>Masterfully Designed and Inspired</span>
+      </a>
+    </div>
+  </>
+)
+
 const IndexPage = ({ data }) => {
   return (
     <>
       <SEO title="Home" />
-      <Header siteTitle="3439Sacramento" />
+      <Header image={headerBackground}>{{ MoreInfo, Hero }}</Header>
       <AnimateStaging>
         <Gallery>
           {data.allFile.edges.map((file, index) => (
@@ -25,13 +52,13 @@ const IndexPage = ({ data }) => {
         </Gallery>
       </AnimateStaging>
       <AnimateStaging>
-        <SectionLinking dark to="/" title="Features" />
+        <SectionLinking dark to="/features" title="Features" />
       </AnimateStaging>
       <AnimateStaging>
-        <SectionLinking to="/" title="Neighborhood" />
+        <SectionLinking to="/neighborhood" title="Neighborhood" />
       </AnimateStaging>
       <AnimateStaging>
-        <SectionLinking dark to="/" title="Map and Directions" />
+        <SectionLinking dark to="/map" title="Map and Directions" />
       </AnimateStaging>
     </>
   )

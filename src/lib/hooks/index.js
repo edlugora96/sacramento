@@ -1,4 +1,4 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 export const useIsVisible = ({
   element,
   disconnect,
@@ -22,7 +22,6 @@ export const useIsVisible = ({
             timer.timeOut && clearTimeout(timer.timeOut)
             if (delay) {
               timer.timeOut = setTimeout(() => {
-                console.log("muestarte Prro")
                 cb(true)
                 timer.timeOut && clearTimeout(timer.timeOut)
               }, delay)
@@ -38,4 +37,24 @@ export const useIsVisible = ({
       })
     }
   }, [element, typeof window, on])
+}
+
+export const useInputValues = (initial, schema, trigger) => {
+  const [value, setValue] = useState(initial)
+  const [error, setError] = useState(false)
+  const [firstFocus, setFirstFocus] = useState(false)
+  useEffect(() => {
+    if ((schema && firstFocus) || trigger) {
+      setError(schema.validate(value).error?.details[0].message)
+    }
+  }, [value, trigger, firstFocus])
+
+  const onChange = (e, val) => {
+    setValue(e ? e.target.value : val)
+  }
+  const onFocus = (e, val) => {
+    setFirstFocus(true)
+    setValue(e ? e.target.value : val)
+  }
+  return { value, onChange, error, onFocus }
 }
