@@ -6,7 +6,6 @@ import { useStore } from "../../lib/store"
 
 const Navbar = observer(() => {
   const { menuOpen, scroll, toggleMenu, notPhone, landscape } = useStore()
-  console.log(notPhone)
   return (
     <Nav scrolled={scroll !== 0} landscape={landscape}>
       {!menuOpen ? (

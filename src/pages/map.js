@@ -23,9 +23,7 @@ const MapView = styled.div`
   }
 `
 
-const Map = ({ data }) => {
-  console.log(data)
-
+const Map = () => {
   return (
     <>
       <Header degEffect image={headerImageMapPage}>
