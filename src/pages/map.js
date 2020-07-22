@@ -6,6 +6,7 @@ import { AnimateStaging } from "../components/AnimateComponent"
 import SEO from "../components/seo"
 import { Card } from "semantic-ui-react"
 import styled from "styled-components"
+import { mediaQuery } from "../lib/utils"
 
 const MapView = styled.div`
   position: relative;
@@ -14,6 +15,11 @@ const MapView = styled.div`
     left: 5rem !important;
     position: absolute !important;
     z-index: 3;
+    @media screen and (max-width: ${mediaQuery.phone}px) {
+      top: 0rem !important;
+      left: 0.5rem !important;
+      position: relative !important;
+    }
   }
 `
 

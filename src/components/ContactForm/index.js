@@ -76,6 +76,7 @@ const ContactForm = () => {
             sitekey={data.site.siteMetadata.googleRecaptchaKey}
             onloadCallback={() => setRecaptchaLoad(true)}
             verifyCallback={() => setRecaptchaVerify(true)}
+            size="compact"
           />
           <br />
           <Form.Group inline>

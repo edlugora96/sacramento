@@ -1,4 +1,5 @@
 import styled, { keyframes, css } from "styled-components"
+import { mediaQuery } from "../../lib/utils"
 
 export const menuAnimation = keyframes`
 0% {
@@ -77,9 +78,9 @@ export const MainMenu = styled.div`
     padding: 0;
     overflow: auto;
     position: fixed;
-    top: 115px;
+    top: ${({ landscape }) => (landscape ? "20px" : "115px")};
     width: 100%;
-    height: calc(100% - 117px);
+    height: ${({ landscape }) => (landscape ? "100%" : "calc(100% - 117px)")};
     backface-visibility: hidden;
     perspective: 1000px;
     color: #fff;
@@ -105,13 +106,18 @@ export const MainMenu = styled.div`
     transform: translate(-50%, -75%);
     left: 150px;
     transition: all 0.5s ease-in-out;
+    @media screen and (max-width: ${mediaQuery.phone}px) {
+      transform: none;
+      left: 0px;
+    }
   }
-  & a:hover + div {
-    opacity: 1;
-    transform: translate(5%, -75%);
-  }
+  & a:hover + div,
   & a + div:hover {
     opacity: 1;
     transform: translate(5%, -75%);
+    @media screen and (max-width: ${mediaQuery.phone}px) {
+      transform: translate(10px, 0) !important;
+      position: relative;
+    }
   }
 `

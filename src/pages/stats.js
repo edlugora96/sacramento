@@ -4,6 +4,7 @@ import SEO from "../components/seo"
 import styled from "styled-components"
 import { AnimateStaging } from "../components/AnimateComponent"
 import contourbg from "../assets/contourbg.png"
+import { mediaQuery } from "../lib/utils"
 
 const Section = styled.section`
   font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -23,6 +24,9 @@ const Section = styled.section`
     grid-template-columns: 1fr 1fr;
     text-align: center;
     align-items: center;
+    @media screen and (max-width: ${mediaQuery.phone}px) {
+      max-width: 100%;
+    }
   }
   & article section {
     height: 100%;
@@ -51,8 +55,9 @@ const SquarePoints = styled.div`
   width: 72px;
   height: 72px;
   z-index: 0;
-  left: ${({ left }) => (left ? "0" : "92%")};
-  top: calc(100% - 155px);
+  left: ${({ left }) => (left ? "0" : "100%")};
+  top: ${({ top }) => (top ? "50px" : "calc(100% - 155px)")};
+  ${({ left }) => !left && "transform: translate(-100%, 0);"}
 `
 
 const StatsTitle = styled.div`
@@ -77,7 +82,7 @@ const Stats = () => {
       </Header>
       <SEO title="Success statistics for Kirk and Peggy Economos, a dynamic husband and wife real estate team." />
       <Section>
-        <SquarePoints />
+        <SquarePoints top />
         <SquarePoints left />
         <AnimateStaging>
           <StatsTitle>

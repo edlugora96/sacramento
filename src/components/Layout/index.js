@@ -1,6 +1,7 @@
 import React, { useEffect } from "react"
 import "semantic-ui-css/semantic.min.css"
 import { useStore, StoreProvider } from "../../lib/store"
+import { useWindowSize } from "../../lib/hooks"
 import { Global } from "./styles"
 import Navbar from "../Navbar"
 import Footer from "../Footer"
@@ -13,7 +14,8 @@ import "./animations.css"
 const handlerScroll = setScroll => setScroll(window.scrollY)
 
 const Layout = ({ children }) => {
-  const { setScroll, stopLoading } = useStore()
+  const { setScroll, stopLoading, setWindowSize } = useStore()
+  useWindowSize({ element: "body", cb: setWindowSize })
   useEffect(() => {
     const handler_scroll = handlerScroll.bind(null, setScroll)
     window.addEventListener("scroll", handler_scroll)

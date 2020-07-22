@@ -1,4 +1,5 @@
 import style from "styled-components"
+import { mediaQuery } from "../../lib/utils"
 
 export const FooterMenu = style.section`
   padding: 0.5rem 0;
@@ -13,5 +14,11 @@ export const FooterMenu = style.section`
     grid-auto-flow: column;
     max-width: 75%;
     padding: 0.7rem;
-}
-`
+    @media screen and (max-width: ${mediaQuery.phone}px) {
+      grid-auto-flow: row;
+    }
+  }
+  @media screen and (max-width: ${mediaQuery.phone}px) {
+    grid-template-columns: 1fr;
+  }
+  `

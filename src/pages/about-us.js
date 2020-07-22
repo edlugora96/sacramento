@@ -3,6 +3,7 @@ import Header from "../components/Header"
 import SEO from "../components/seo"
 import styled from "styled-components"
 import { AnimateStaging } from "../components/AnimateComponent"
+import { mediaQuery } from "../lib/utils"
 
 const Section = styled.section`
   font-family: Lato, "Helvetica Neue", Arial, Helvetica, sans-serif;
@@ -21,8 +22,13 @@ const Section = styled.section`
   margin: 0 auto;
   visibility: visible !important;
   animation-name: _2EUva3a2rL1Pp_GQI0eHy- !important;
+  @media screen and (max-width: ${mediaQuery.phone}px) {
+    padding: 1rem;
+    display: block;
+  }
   & img {
     max-width: 320px;
+    width: 100%;
   }
   & p {
     font-size: 18px;

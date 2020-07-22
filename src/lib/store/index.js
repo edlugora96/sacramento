@@ -1,7 +1,7 @@
 import React from "react"
 import { useLocalStore } from "mobx-react"
-import { observable, action } from "mobx"
-
+import { observable, action, computed } from "mobx"
+import { mediaQuery } from "../utils"
 export const store = observable(
   {
     menuOpen: false,
@@ -29,6 +29,48 @@ export const store = observable(
     stopLoading() {
       store.loading = false
     },
+    windowWidth: 0,
+    windowHeight: 0,
+
+    setWindowSize(size) {
+      store.windowWidth = size.width
+      store.windowHeight = size.height
+    },
+
+    get landscape() {
+      if (store.windowWidth > store.windowHeight && store.phone) {
+        return true
+      }
+      return false
+    },
+
+    get getDevice() {
+      if (store.windowWidth <= mediaQuery.phone) {
+        return "phone"
+      } else if (
+        store.windowWidth > mediaQuery.phone &&
+        store.windowWidth <= mediaQuery.tablet
+      ) {
+        return "tablet"
+      } else if (store.windowWidth > mediaQuery.tablet) {
+        return "desktop"
+      }
+      /*
+        320px.
+        480px.
+        600px.
+        768px.
+        900px.
+        1024px.
+        1200px.
+      */
+    },
+    get notPhone() {
+      return store.getDevice !== "phone"
+    },
+    get phone() {
+      return store.getDevice === "phone"
+    },
   },
   {
     toggleMenu: action,
@@ -38,6 +80,11 @@ export const store = observable(
     startLoading: action,
     stopLoading: action,
     setCurrentMainSlide: action,
+    setWindowSize: action,
+    getDevice: computed,
+    notPhone: computed,
+    phone: computed,
+    landscape: computed,
   }
 )
 

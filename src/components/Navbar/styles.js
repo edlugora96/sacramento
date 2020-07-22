@@ -1,11 +1,13 @@
 import styled from "styled-components"
 import logoNavbar from "../../assets/logoNavbar.png"
+import { mediaQuery } from "../../lib/utils"
+
 export const Nav = styled.nav`
-  position: fixed;
+  position: ${({ landscape }) => (landscape ? "absolute" : "fixed")} ;
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9;
+  z-index: ${({ landscape }) => (landscape ? "4" : "9")} ;
   padding: 25px;
   transition: all 0.5s ease;
   display: grid;
@@ -36,7 +38,12 @@ export const Nav = styled.nav`
     `
     background-color: #000;
     padding: 20px;
-  `}
+    `}
+  @media screen and (max-width: ${mediaQuery.phone}px) {
+    grid-template-columns: 35px 1fr;
+    padding: 20px;
+    background-size: 14rem;
+  }
 `
 
 export const HamburgerMenu = styled.span`

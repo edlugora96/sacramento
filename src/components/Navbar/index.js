@@ -5,9 +5,10 @@ import { BeautyLink, Link } from "../commonStyles"
 import { useStore } from "../../lib/store"
 
 const Navbar = observer(() => {
-  const { menuOpen, scroll, toggleMenu } = useStore()
+  const { menuOpen, scroll, toggleMenu, notPhone, landscape } = useStore()
+  console.log(notPhone)
   return (
-    <Nav scrolled={scroll !== 0}>
+    <Nav scrolled={scroll !== 0} landscape={landscape}>
       {!menuOpen ? (
         <HamburgerMenu onClick={toggleMenu}>
           <i></i>
@@ -15,22 +16,33 @@ const Navbar = observer(() => {
       ) : (
         <div style={{ height: "36px", width: "35px" }}></div>
       )}
-      <BeautyLink to="/gallery">
-        <span>Gallery</span>
-      </BeautyLink>
-      <BeautyLink to="/features">
-        <span>Features</span>
-      </BeautyLink>
+
+      {notPhone && (
+        <>
+          <BeautyLink to="/gallery">
+            <span>Gallery</span>
+          </BeautyLink>
+          <BeautyLink to="/features">
+            <span>Features</span>
+          </BeautyLink>
+        </>
+      )}
+
       <BeautyLink to="/"> </BeautyLink>
-      <BeautyLink to="/map">
-        <span>Map</span>
-      </BeautyLink>
-      <BeautyLink to="/contact">
-        <span>Contact</span>
-      </BeautyLink>
-      <Link href="tel:4152716390">
-        <span>(415) 271-6390</span>
-      </Link>
+
+      {notPhone && (
+        <>
+          <BeautyLink to="/map">
+            <span>Map</span>
+          </BeautyLink>
+          <BeautyLink to="/contact">
+            <span>Contact</span>
+          </BeautyLink>
+          <Link href="tel:4152716390">
+            <span>(415) 271-6390</span>
+          </Link>
+        </>
+      )}
     </Nav>
   )
 })

@@ -7,6 +7,7 @@ import ContactForm from "../components/ContactForm"
 import ContactMoreInfo from "../components/ContactMoreInfo"
 import SEO from "../components/seo"
 import styled from "styled-components"
+import { mediaQuery } from "../lib/utils"
 
 const ContactView = styled.div`
   position: relative;
@@ -17,6 +18,10 @@ const ContactView = styled.div`
     position: absolute !important;
     z-index: 3;
     max-width: 500px;
+    @media screen and (max-width: ${mediaQuery.phone}px) {
+      padding: 0.5rem !important;
+      position: static !important;
+    }
   }
   & > div > div {
     width: auto !important;

@@ -6,9 +6,9 @@ import { useStore } from "../../lib/store"
 import { AnimateStaging } from "../AnimateComponent"
 
 const Menu = observer(() => {
-  const { menuOpen, toggleMenu } = useStore()
+  const { menuOpen, toggleMenu, landscape } = useStore()
   return (
-    <MainMenu menuOpen={menuOpen}>
+    <MainMenu menuOpen={menuOpen} landscape={landscape}>
       <nav>
         <AnimateStaging disconnect={false} delay={500}>
           <NiceBtn white onClick={toggleMenu}>

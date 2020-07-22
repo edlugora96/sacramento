@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { mediaQuery } from "../../lib/utils"
 
 export const Footer = styled.footer`
   background-color: #fff;
@@ -17,6 +18,9 @@ export const Footer = styled.footer`
   & section > div:first-child {
     margin-bottom: 1rem;
   }
+  @media screen and (max-width: ${mediaQuery.phone}px) {
+    padding: 1rem;
+  }
 `
 export const ContactSection = styled.section`
   margin: 20px 0;
@@ -27,6 +31,9 @@ export const ContactSection = styled.section`
     "sitemap address company filla filla"
     "sitemap phone shareBtn filla filla";
   grid-column-gap: 1rem;
+  @media screen and (max-width: ${mediaQuery.phone}px) {
+    display: block;
+  }
 `
 export const PhoneArea = styled.p`
   grid-area: phone;

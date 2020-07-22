@@ -1,12 +1,11 @@
 import styled from "styled-components"
 import imageDefault from "../../assets/kirkpeggylulu.png"
+import { mediaQuery } from "../../lib/utils"
 
 export const Header = styled.header`
   background-color: #000;
   position: relative;
   min-height: 100vh;
-  max-height: 100vh;
-
   & > div > h2 {
     display: block;
     color: #fff;
@@ -31,6 +30,12 @@ export const HeaderMoreInfo = styled.div`
     padding: 30px 50px;
     font-size: 18px;
     color: #fff;
+    @media screen and (max-width: ${mediaQuery.phone}px) {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+      padding-top: 1rem !important;
+      padding-bottom: 1rem !important;
+    }
   }
   & > *:first-child {
     padding-left: 64px;
@@ -60,10 +65,15 @@ export const HeaderMoreInfo = styled.div`
   & > *:last-child a:hover {
     color: #000;
   }
+  @media screen and (max-width: ${mediaQuery.phone}px) {
+    display: block;
+    position: static;
+  }
 `
 
 export const HeaderBackground = styled.div`
   min-height: 100vh;
+  max-height: 100vh;
   background-color: #000;
   background-size: cover;
   background-repeat: no-repeat;
@@ -76,6 +86,7 @@ export const BackgroundOpacity = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  max-height: 100vh;
   ${({ degEffect }) =>
     degEffect
       ? `
@@ -102,7 +113,7 @@ export const Hero = styled.div`
   left: 0;
   top: 0;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   display: grid;
   justify-items: flex-start;
   align-items: end;
@@ -112,4 +123,14 @@ export const Hero = styled.div`
   padding-left: 64px;
   z-index: 3;
   text-align: left;
+  @media screen and (max-width: ${mediaQuery.phone}px) {
+    padding-left: 30px;
+    padding-bottom: 30px;
+  }
+  & > h2 {
+    @media screen and (max-width: ${mediaQuery.phone}px) {
+      margin-left: 0 !important;
+      font-size: 40px !important;
+    }
+  }
 `

@@ -39,6 +39,30 @@ export const useIsVisible = ({
   }, [element, typeof window, on])
 }
 
+export const useWindowSize = ({ element, disconnect, cb = () => {} }) => {
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      Promise.resolve(
+        typeof window.ResizeObserver !== "undefined"
+          ? window.ResizeObserver
+          : import("resize-observer-polyfill")
+      ).then(() => {
+        const observer = new window.ResizeObserver(entries => {
+          const entry = entries[0]
+          const attr = entry.contentRect
+          cb(attr)
+          if (disconnect) {
+            observer.disconnect()
+          }
+        })
+        element === "body"
+          ? observer.observe(document.body)
+          : observer.observe(element.current)
+      })
+    }
+  }, [element, typeof window])
+}
+
 export const useInputValues = (initial, schema, trigger) => {
   const [value, setValue] = useState(initial)
   const [error, setError] = useState(false)

@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { mediaQuery } from "../../lib/utils"
 
 export const Slider = styled.section`
   width: 100%;
@@ -26,6 +27,9 @@ export const Slider = styled.section`
   & .slick-slider + .slick-slider {
     margin-top: 5px;
   }
+  @media screen and (max-width: ${mediaQuery.phone}px) {
+    padding: 1rem;
+  }
 `
 export const SliderOverlay = styled.div`
   transition: opacity 0.3s linear;
@@ -50,10 +54,14 @@ export const SliderOverlay = styled.div`
   }
   & .slick-slide img {
     width: auto !important;
-    height: 100vh !important;
+    height: auto !important;
     max-width: 80%;
-    transform: translate(-50%, 0);
+    transform: translate(-50%, -50%);
     left: 50% !important;
+    top: 50% !important;
+  }
+  & .gatsby-image-wrapper {
+    height: 100vh;
   }
 `
 export const ButtonCloseOverlay = styled.button`
@@ -94,6 +102,7 @@ export const ButtonCloseOverlay = styled.button`
   height: auto;
   z-index: 12;
   position: fixed;
+  transform: translate(-50%, 0);
 
   -webkit-appearance: button;
 
