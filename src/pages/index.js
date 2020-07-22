@@ -4,7 +4,7 @@ import SEO from "../components/seo"
 import Header from "../components/Header"
 import Gallery from "../components/Gallery"
 import SectionLinking from "../components/landing/SectionLinking"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { AnimateStaging } from "../components/AnimateComponent"
 import headerBackground from "../assets/headerBackground.jpg"
@@ -32,9 +32,9 @@ const MoreInfo = () => (
       </div>
     </div>
     <div>
-      <a>
+      <Link to="/features">
         <span>Masterfully Designed and Inspired</span>
-      </a>
+      </Link>
     </div>
   </>
 )

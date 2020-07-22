@@ -1,12 +1,19 @@
 import React from "react"
-
+import Header from "../components/Header"
+import { NiceLink } from "../components/commonStyles"
 import SEO from "../components/seo"
-
+import image404 from "../assets/404.png"
 const NotFoundPage = () => (
   <>
     <SEO title="404: Not found" />
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <Header degEffect image={image404}>
+      <div>
+        <h2>404 - Not fount</h2>
+        <NiceLink white to="/">
+          Go back to Home
+        </NiceLink>
+      </div>
+    </Header>
   </>
 )
 

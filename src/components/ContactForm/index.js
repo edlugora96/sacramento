@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react"
+import React, { useRef, useState } from "react"
 import { Card, Button, Checkbox, Form } from "semantic-ui-react"
 import { useStaticQuery, graphql } from "gatsby"
 import { useInputValues } from "../../lib/hooks"

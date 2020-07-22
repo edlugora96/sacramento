@@ -43,33 +43,17 @@ export const store = observable(
       }
       return false
     },
-
-    get getDevice() {
-      if (store.windowWidth <= mediaQuery.phone) {
-        return "phone"
-      } else if (
-        store.windowWidth > mediaQuery.phone &&
-        store.windowWidth <= mediaQuery.tablet
-      ) {
-        return "tablet"
-      } else if (store.windowWidth > mediaQuery.tablet) {
-        return "desktop"
-      }
-      /*
-        320px.
-        480px.
-        600px.
-        768px.
-        900px.
-        1024px.
-        1200px.
-      */
-    },
     get notPhone() {
-      return store.getDevice !== "phone"
+      if (store.windowWidth <= mediaQuery.phone) {
+        return false
+      }
+      return true
     },
     get phone() {
-      return store.getDevice === "phone"
+      if (store.windowWidth <= mediaQuery.phone) {
+        return true
+      }
+      return false
     },
   },
   {
@@ -81,7 +65,6 @@ export const store = observable(
     stopLoading: action,
     setCurrentMainSlide: action,
     setWindowSize: action,
-    getDevice: computed,
     notPhone: computed,
     phone: computed,
     landscape: computed,

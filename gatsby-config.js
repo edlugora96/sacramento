@@ -3,6 +3,7 @@ module.exports = {
   siteMetadata: {
     title: `3439Sacramento`,
     description: `3439Sacramento new listing.`,
+    siteUrl: process.env.SITE_URL,
     author: `@edlugora`,
     googleMapKey: process.env.GOOGLE_MAPS_STATIC_API_KEY,
     googleRecaptchaKey: process.env.GOOGLE_RECAPTCHA_KEY,
@@ -32,6 +33,9 @@ module.exports = {
         icon: `src/assets/favicon.png`, // This path is relative to the root of the site.
       },
     },
+    "gatsby-plugin-offline",
+    "gatsby-plugin-sitemap",
+    "gatsby-plugin-robots-txt",
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

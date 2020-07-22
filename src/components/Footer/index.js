@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react"
+import React from "react"
 import { Footer, ContactSection, PhoneArea, ShareBtnArea } from "./style"
 import { BeautyLink, Link, NiceLink } from "../commonStyles"
 import { AnimateStaging } from "../AnimateComponent"
@@ -7,6 +7,7 @@ const LogoFooter = () => (
   <AnimateStaging>
     <img
       style={{ maxWidth: "250px" }}
+      alt="compass logo"
       src="https://propertysonoma.com/media/logo-footer-e7c151e7079ca0ddaf553459886d307d.jpg"
     />
   </AnimateStaging>
@@ -122,16 +123,19 @@ const MoreLogos = () => (
       <img
         src="https://res.cloudinary.com/luxuryp/image/upload/q_auto:good,f_auto,w_80/v1528402391/dark-realtor-logo_x1vczu.png"
         width="40"
+        alt="relator logo"
       />
       &nbsp;&nbsp;&nbsp;
       <img
         src="https://res.cloudinary.com/luxuryp/image/upload/q_auto:good,f_auto,w_80/v1528402391/dark-equal-logo_gahxpa.png"
         width="40"
+        alt="equal housing opportunity"
       />
       &nbsp;&nbsp;&nbsp;
       <img
         src="https://res.cloudinary.com/luxuryp/image/upload/v1532125647/qdry0nbniqnqpbakrlws.png"
         width="175"
+        alt="compass logo"
       />
       &nbsp;&nbsp;&nbsp;
     </p>

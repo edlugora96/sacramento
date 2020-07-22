@@ -71,7 +71,10 @@ const AboutUs = () => {
       <SEO title="Meet the husband and wife real estate team, Kirk and Peggy Economos" />
       <Section>
         <AnimateStaging>
-          <img src="https://propertysonoma.com/media/peggy-378b10927799968caf4f4e0eda30b40c.jpg" />
+          <img
+            src="https://propertysonoma.com/media/peggy-378b10927799968caf4f4e0eda30b40c.jpg"
+            alt="peggy"
+          />
         </AnimateStaging>
         <article>
           <AnimateStaging>
@@ -206,7 +209,10 @@ const AboutUs = () => {
           </AnimateStaging>
         </article>
         <AnimateStaging>
-          <img src="https://propertysonoma.com/media/kirk-e29cdc10863d900e447d184c1ddccd62.jpg" />
+          <img
+            src="https://propertysonoma.com/media/kirk-e29cdc10863d900e447d184c1ddccd62.jpg"
+            alt="kirk"
+          />
         </AnimateStaging>
       </Section>
     </>
