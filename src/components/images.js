@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 export const NeighborhoodImage = () => {
   const data = useStaticQuery(graphql`
     query {
-      placeholderImage: file(relativePath: { eq: "270_4.jpg" }) {
+      placeholderImage: file(relativePath: { eq: "018.jpg" }) {
         childImageSharp {
           fluid(maxWidth: 3200, quality: 100) {
             ...GatsbyImageSharpFluid

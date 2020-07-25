@@ -2,7 +2,7 @@ import React from "react"
 import styled from "styled-components"
 import { AnimateStaging } from "../components/AnimateComponent"
 import Header from "../components/Header"
-import headerImageFeaturesPage from "../assets/gallery/270_18.jpg"
+import headerImageFeaturesPage from "../assets/gallery/021.jpg"
 import SEO from "../components/seo"
 
 const H2 = styled.h2`
@@ -65,17 +65,17 @@ const ContentCell = styled.div`
 `
 
 const P = styled.p`
-  padding: 20px;
   z-index: 5;
   position: relative;
   grid-column: 1 / span 2;
+  margin: 0 -1rem;
+  text-align: justify;
   & > * {
     padding: 2.5px 0;
   }
 `
 
 const MoreInfo = styled.p`
-  margin: 0 0 1em;
   line-height: 1.4285em;
   width: 100%;
   max-width: 460px;
@@ -110,7 +110,7 @@ const FeaturesPage = () => {
                   <div>Bedrooms: </div>
                 </AnimateStaging>
                 <AnimateStaging>
-                  <div> 4</div>
+                  <div> 3</div>
                 </AnimateStaging>
               </ContentCell>
               <ContentCell>
@@ -118,7 +118,7 @@ const FeaturesPage = () => {
                   <div>Bathrooms: </div>
                 </AnimateStaging>
                 <AnimateStaging>
-                  <div> 3 Full, 1 Half</div>
+                  <div> 2</div>
                 </AnimateStaging>
               </ContentCell>
               <ContentCell>
@@ -126,47 +126,60 @@ const FeaturesPage = () => {
                   <div>Home: </div>
                 </AnimateStaging>
                 <AnimateStaging>
-                  <div> 3,620 sq. ft.</div>
+                  <div> 1,942 sq. ft.</div>
                 </AnimateStaging>
               </ContentCell>
               <ContentCell>
                 <AnimateStaging>
-                  <div>Lot: </div>
+                  <div>Parking Spaces: </div>
                 </AnimateStaging>
                 <AnimateStaging>
-                  <div> 9,186 sq. ft.</div>
+                  <div> 2</div>
                 </AnimateStaging>
               </ContentCell>
               <P>
+                <br />
                 <AnimateStaging>
-                  270 Castenada Avenue is a respectfully maintained and
-                  upgraded, 1916 Forest Hill Home designed by renowned architect
-                  Bernard Maybeck. <br />
+                  Unit #401 at 3439 Sacramento St, is a sophisticated home that
+                  offers exciting interior design and an outstanding floorplan.
+                  Located on the top floor of a refined, 9-unit property which
+                  was built in 2000, it is perfectly situated in San Francisco’s
+                  desirable Presidio Heights neighborhood.
+                  <br />
+                  <br />
                 </AnimateStaging>
+
                 <AnimateStaging>
-                  Its architectural detail is a beautiful blend of English grand
-                  hall, castle turret, massive fireplace, angled roof lines,
-                  hand-hewn and hand-crafted detail, and elegant Japanese
-                  influences. All of these features honoring the principles of
-                  the Arts and Crafts movement that celebrated substance,
-                  contemplation and essence over superficiality. <br />
+                  In 2018 and 2019, prominent New York interior-designer, Lisa
+                  Kanning, transformed this already contemporary and chic condo
+                  into a tour-de-force of proportional balance, clean lines,
+                  contrasts of texture and discerning attention to detail. The
+                  3-bedroom, 2-bath, highly functional floor plan features
+                  generous room sizes, high vaulted ceilings, exquisite finishes
+                  and the natural light of walls of windows and skylights. The
+                  home includes a gourmet kitchen with premier appliances, an
+                  ensuite master bedroom with a bathroom offering dual vanities,
+                  a soaking-tub and a walk-in shower, and an elegant dining
+                  room, living room area with ribbon flame fireplace.
+                  <br />
+                  <br />
                 </AnimateStaging>
+
                 <AnimateStaging>
-                  No words can do justice describing this marvelous home. This
-                  is a property that can be both a wonderful place to live and a
-                  powerful inspiration. A once in a lifetime opportunity. <br />
-                </AnimateStaging>
-                <AnimateStaging>
-                  270 Castenada Avenue is a prominent hilltop location with
-                  commanding views, incredible natural rock formations, massive
-                  Cypress trees and outstanding landscaping. <br />
+                  This exceptional property is complimented by an in-unit washer
+                  / dryer; storage area; and interior access, 2-car, tandem
+                  parking with elevator service.
+                  <br />
+                  <br />
                 </AnimateStaging>
               </P>
             </ContentGrid>
           </div>
           <MoreInfo>
             <AnimateStaging>
-              <i>*Per Tax Records</i>
+              <i>
+                Exciting Design, Outstanding Floorplan, Wonderful Neighborhood
+              </i>
             </AnimateStaging>
             <br />
             <br />

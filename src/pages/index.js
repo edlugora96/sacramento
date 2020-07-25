@@ -7,7 +7,7 @@ import SectionLinking from "../components/landing/SectionLinking"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 import { AnimateStaging } from "../components/AnimateComponent"
-import headerBackground from "../assets/headerBackground.jpg"
+import headerBackground from "../assets/gallery/headerBackground.jpg"
 
 const ImageGalleryGraphQLGatsby = props => {
   return <Img alt={props.node.name} fluid={props.node.childImageSharp.fluid} />
@@ -15,8 +15,12 @@ const ImageGalleryGraphQLGatsby = props => {
 
 const Hero = () => (
   <div>
-    <h1>3439 Sacramento</h1>
-    <h3>$ 4,250,000</h3>
+    <h1>
+      3439 Sacramento St
+      <br /> Unit #401
+      <br /> San Francisco, CA 94118
+    </h1>
+    <h3>$ 3,350,000</h3>
     <br />
   </div>
 )
@@ -25,15 +29,17 @@ const MoreInfo = () => (
   <>
     <div>
       <div>
-        <span>4 Bedrooms</span>
-        <span>3 Full Baths</span>
-        <span>1 Half Bath</span>
-        <span>3,620 sq. ft.</span>
+        <span>3 Bedrooms</span>
+        <span>2 Baths</span>
+        <span>2 Parking Spaces</span>
+        <span>1,942 sq. ft.</span>
       </div>
     </div>
     <div>
       <Link to="/features">
-        <span>Masterfully Designed and Inspired</span>
+        <span>
+          Spectacular Design, Outstanding Floor Plan, Wonderful Neighborhood
+        </span>
       </Link>
     </div>
   </>

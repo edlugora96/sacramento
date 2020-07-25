@@ -1,6 +1,6 @@
 import React from "react"
 import Header from "../components/Header"
-import headerImageMapPage from "../assets/gallery/270_13.jpg"
+import headerImageMapPage from "../assets/gallery/009.jpg"
 import GoogleMaps from "../components/GoogleMaps"
 import { AnimateStaging } from "../components/AnimateComponent"
 import SEO from "../components/seo"
@@ -34,7 +34,7 @@ const Map = () => {
         <br />
         <MapView>
           <Card header="Direction" />
-          <GoogleMaps zoom={16} center={{ lat: 37.74685, lng: -122.46334 }} />
+          <GoogleMaps zoom={16} center={{ lat: 37.78761, lng: -122.44929 }} />
         </MapView>
         <br />
       </AnimateStaging>

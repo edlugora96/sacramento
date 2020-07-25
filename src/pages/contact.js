@@ -1,6 +1,6 @@
 import React from "react"
 import Header from "../components/Header"
-import headerImageContactPage from "../assets/gallery/270_26.jpg"
+import headerImageContactPage from "../assets/gallery/010.jpg"
 import GoogleMaps from "../components/GoogleMaps"
 import { AnimateStaging } from "../components/AnimateComponent"
 import ContactForm from "../components/ContactForm"

@@ -5,7 +5,7 @@ import Img from "gatsby-image"
 import Gallery from "../components/Gallery"
 import { AnimateStaging } from "../components/AnimateComponent"
 import Header from "../components/Header"
-import headerImageGalleryPage from "../assets/gallery/270_21.jpg"
+import headerImageGalleryPage from "../assets/gallery/017.jpg"
 import SEO from "../components/seo"
 import { mediaQuery } from "../lib/utils"
 const ImageGalleryGraphQLGatsby = props => {

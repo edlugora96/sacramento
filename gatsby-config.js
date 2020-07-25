@@ -2,7 +2,7 @@ require("dotenv").config()
 module.exports = {
   siteMetadata: {
     title: `3439Sacramento`,
-    description: `3439Sacramento new listing.`,
+    description: `3439 Sacramento St, Unit #401 - A spectacular 3 bedroom, 2 bath condominium in Presidio Heights, 1942 square feet, 2 car parking, storage and elevator..`,
     siteUrl: process.env.SITE_URL,
     author: `@edlugora`,
     googleMapKey: process.env.GOOGLE_MAPS_STATIC_API_KEY,
@@ -33,7 +33,7 @@ module.exports = {
         icon: `src/assets/favicon.png`, // This path is relative to the root of the site.
       },
     },
-    "gatsby-plugin-offline",
+    // "gatsby-plugin-offline",
     "gatsby-plugin-sitemap",
     "gatsby-plugin-robots-txt",
     // this (optional) plugin enables Progressive Web App + Offline functionality
