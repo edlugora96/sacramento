@@ -49,7 +49,7 @@ const ContactForm = () => {
     ) {
       recaptcha.current.reset()
       setRecaptchaVerify(false)
-      alert("Thanks, we have received your message.")
+      alert("Temporarily under maintenance.")
     }
   }
   return (

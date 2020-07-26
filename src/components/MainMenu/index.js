@@ -47,6 +47,11 @@ const Menu = observer(() => {
           </BeautyLink>
         </AnimateStaging>
         <AnimateStaging disconnect={false} delay={500}>
+          <BeautyLink to="/virtual-tour">
+            <span>Virtual tour</span>
+          </BeautyLink>
+        </AnimateStaging>
+        <AnimateStaging disconnect={false} delay={500}>
           <BeautyLink to="/contact">
             <span>Schedule a showing</span>
           </BeautyLink>

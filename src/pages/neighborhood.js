@@ -297,12 +297,12 @@ const NeighborhoodPage = () => {
           </AnimateStaging>
         </Section>
         <Section>
-          <I>
-            <AnimateStaging>
+          <AnimateStaging>
+            <I>
               Upscale, Luxury, Tech, Affluent, Mansions, Sophisticated,
               Exclusive
-            </AnimateStaging>
-          </I>
+            </I>
+          </AnimateStaging>
         </Section>
       </NeighborhoodView>
     </>

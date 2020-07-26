@@ -62,7 +62,7 @@ const OverlaySlick = observer(({ openOverlay, setOpenOverlay, children }) => {
     document.querySelector("#portal")
   )
 })
-const Gallery = ({ children }) => {
+const Gallery = ({ children, thumbs = true }) => {
   const [openOverlay, setOpenOverlay] = useState(false)
   const [loadOverlay, setLoadOverlay] = useState(false)
   const [mainSlider, setMainSlider] = useState(null)
@@ -88,7 +88,7 @@ const Gallery = ({ children }) => {
           initialSlide={currentMainSlide}
           autoplay={true}
           ref={mainSliderRef => setMainSlider(mainSliderRef)}
-          asNavFor={thumbsSlider}
+          asNavFor={thumbs && thumbsSlider}
           dots={false}
           prevArrow={<PrevArrow />}
           nextArrow={<NextArrow />}
@@ -96,17 +96,19 @@ const Gallery = ({ children }) => {
         >
           {children}
         </Slick>
-        <Slick
-          initialSlide={currentMainSlide}
-          ref={thumbsSliderRef => setThumbsSlider(thumbsSliderRef)}
-          asNavFor={mainSlider}
-          slidesToShow={7}
-          arrows={false}
-          swipeToSlide={true}
-          focusOnSelect={true}
-        >
-          {children}
-        </Slick>
+        {thumbs && (
+          <Slick
+            initialSlide={currentMainSlide}
+            ref={thumbsSliderRef => setThumbsSlider(thumbsSliderRef)}
+            asNavFor={mainSlider}
+            slidesToShow={7}
+            arrows={false}
+            swipeToSlide={true}
+            focusOnSelect={true}
+          >
+            {children}
+          </Slick>
+        )}
       </div>
     </Slider>
   )

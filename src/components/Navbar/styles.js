@@ -11,7 +11,7 @@ export const Nav = styled.nav`
   padding: 25px;
   transition: all 0.5s ease;
   display: grid;
-  grid-template-columns: 35px 1.3fr 1.3fr minmax(50px, 550px) 1fr 1fr 2fr;
+  grid-template-columns: 35px 1.3fr 1.3fr 1fr minmax(50px, 550px) 1fr 1fr 2fr;
   grid-column-gap: 1rem;
   justify-items: center;
   align-items: center;

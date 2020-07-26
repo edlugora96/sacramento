@@ -4,6 +4,8 @@ import { AnimateStaging } from "../components/AnimateComponent"
 import Header from "../components/Header"
 import headerImageFeaturesPage from "../assets/gallery/021.jpg"
 import SEO from "../components/seo"
+import Gallery from "../components/Gallery"
+import { FloorPlantImage } from "../components/floorPlanImage"
 
 const H2 = styled.h2`
   color: rgba(0, 0, 0, 0.87);
@@ -175,6 +177,18 @@ const FeaturesPage = () => {
               </P>
             </ContentGrid>
           </div>
+        </Grid>
+        <Grid>
+          <AnimateStaging>
+            <h3>Floor Plan</h3>
+          </AnimateStaging>
+        </Grid>
+        <AnimateStaging>
+          <Gallery thumbs={false} style={{ height: "100vh" }}>
+            <FloorPlantImage />
+          </Gallery>
+        </AnimateStaging>
+        <Grid>
           <MoreInfo>
             <AnimateStaging>
               <i>

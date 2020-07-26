@@ -159,7 +159,7 @@ export const ButtonOpenOverlay = styled.button`
 
   top: 10px;
   right: 10px;
-  z-index: 10;
+  z-index: 5;
   position: absolute;
   background-color: #fff;
 

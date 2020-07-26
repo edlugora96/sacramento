@@ -24,6 +24,9 @@ const Navbar = observer(() => {
           <BeautyLink to="/features">
             <span>Features</span>
           </BeautyLink>
+          <BeautyLink to="/virtual-tour">
+            <span>Virtual tour</span>
+          </BeautyLink>
         </>
       )}
 

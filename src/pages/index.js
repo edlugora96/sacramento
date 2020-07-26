@@ -61,10 +61,13 @@ const IndexPage = ({ data }) => {
         <SectionLinking dark to="/features" title="Features" />
       </AnimateStaging>
       <AnimateStaging>
-        <SectionLinking to="/neighborhood" title="Neighborhood" />
+        <SectionLinking to="/virtual-tour" title="Virtual tour" />
       </AnimateStaging>
       <AnimateStaging>
-        <SectionLinking dark to="/map" title="Map and Directions" />
+        <SectionLinking dark to="/neighborhood" title="Neighborhood" />
+      </AnimateStaging>
+      <AnimateStaging>
+        <SectionLinking to="/map" title="Map and Directions" />
       </AnimateStaging>
     </>
   )
