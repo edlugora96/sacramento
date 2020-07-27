@@ -46,12 +46,12 @@ export default GalleryPage
 
 export const query = graphql`
   query {
-    allFile {
+    allFile(sort: { fields: relativePath }) {
       edges {
         node {
           name
           childImageSharp {
-            fluid(maxWidth: 3200, webpQuality: 100) {
+            fluid(maxWidth: 3200) {
               ...GatsbyImageSharpFluid_withWebp
             }
           }

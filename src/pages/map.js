@@ -33,8 +33,11 @@ const Map = () => {
       <AnimateStaging>
         <br />
         <MapView>
-          <Card header="Direction" />
-          <GoogleMaps zoom={16} center={{ lat: 37.78761, lng: -122.44929 }} />
+          <Card
+            header="Direction"
+            description="West on Sacramento St from Presidio Blvd, 1.5 blocks on the South-side of the street"
+          />
+          <GoogleMaps zoom={18} center={{ lat: 37.787816, lng: -122.44945 }} />
         </MapView>
         <br />
       </AnimateStaging>

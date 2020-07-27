@@ -10,6 +10,7 @@ import {
   contactSchemas,
 } from "../../lib/schemas"
 import Recaptcha from "react-recaptcha"
+import app from "../../lib/utils/socketClient"
 
 const ContactForm = () => {
   const recaptcha = useRef(null)
@@ -33,6 +34,7 @@ const ContactForm = () => {
   const phone = useInputValues("", phoneScheme, checkInputs)
   const handlerSubmit = () => {
     const resolve = {
+      origin: "3439sacramento.com",
       name: name.value,
       email: email.value,
       message: message.value,
@@ -41,15 +43,18 @@ const ContactForm = () => {
     }
     if (!recaptchaLoad || !recaptchaVerify) {
       alert("Are you a human? Please verify it.")
-    }
-    if (
+    } else if (
       recaptchaLoad &&
       recaptchaVerify &&
       !contactSchemas.validate(resolve).error
     ) {
       recaptcha.current.reset()
       setRecaptchaVerify(false)
-      alert("Temporarily under maintenance.")
+      app
+        .service("messages")
+        .create(resolve)
+        .then(() => alert("Thank you, we have received your message"))
+        .catch(() => alert("500 Server Error. Please try again."))
     }
   }
   return (

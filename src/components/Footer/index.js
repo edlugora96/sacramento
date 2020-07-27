@@ -50,9 +50,9 @@ const ContactInfo = () => (
         Compass
       </p>
       <p>
-        135 W Napa St #100
+        1699 Van Ness Avenue
         <br />
-        Sonoma, CA 95476
+        San Francisco, CA 94109
       </p>
       <br />
     </AnimateStaging>
@@ -84,7 +84,7 @@ const ContactInfo = () => (
     <ShareBtnArea>
       <AnimateStaging>
         <NiceLink to="/contact" smallX2 normal>
-          Contact | Schedule a Showing
+          Contact |<br /> Schedule a Showing
         </NiceLink>
       </AnimateStaging>
     </ShareBtnArea>

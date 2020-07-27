@@ -7,6 +7,7 @@ let count = 1
 export const wrapRootElement = ({ element }) => <Layout>{element}</Layout>
 export const onPreRouteUpdate = () => {
   store.startLoading()
+  store.removeDark()
 }
 export const onRouteUpdate = () => {
   store.closeMenu()

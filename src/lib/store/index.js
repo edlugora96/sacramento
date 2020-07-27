@@ -4,6 +4,13 @@ import { observable, action, computed } from "mobx"
 import { mediaQuery } from "../utils"
 export const store = observable(
   {
+    navbarDark: false,
+    makeDark() {
+      store.navbarDark = true
+    },
+    removeDark() {
+      store.navbarDark = false
+    },
     menuOpen: false,
     toggleMenu() {
       store.menuOpen = !store.menuOpen
@@ -57,6 +64,8 @@ export const store = observable(
     },
   },
   {
+    makeDark: action,
+    removeDark: action,
     toggleMenu: action,
     closeMenu: action,
     openMenu: action,

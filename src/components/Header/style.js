@@ -133,4 +133,10 @@ export const Hero = styled.div`
       font-size: 40px !important;
     }
   }
+  & div > h1 {
+    font-weight: 100;
+  }
+  & div > h3 {
+    padding-bottom: 3rem;
+  }
 `

@@ -117,8 +117,9 @@ const NeighborhoodPage = () => {
                 The older, established homes along the wide, quiet streets of
                 Presidio Heights are mainly two-story, large, and complete with
                 front and back yards. This is a primarily residential
-                neighborhood, with nearby shopping to be found in the adjoining
-                Laurel District.
+                neighborhood, with nearby shopping and dining to be found on
+                Sacramento Street and the adjoining Laurel Village Shopping
+                Center.
               </p>
             </p>
           </Section>
@@ -127,17 +128,9 @@ const NeighborhoodPage = () => {
           <Section>
             <p>
               <p>
-                This is an ecumenical neighborhood. The stately dome of Temple
-                Emanu-El, the Jewish synagogue is just around the corner from
-                the Little Sisters of the Poor on Lake Street. Farther down
-                California Street in Laurel Heights, the Jewish Community Center
-                of San Francisco welcomes all to its first-rate health club and
-                nightly performance series of dance, music, and theater. Across
-                the street, Ella's is much loved for its unpretentious comfort
-                food and weekend brunch. Upscale restaurants clustered on
-                Sacramento Street include Spruce and Sociale. The intimate G
-                Bar, oozing with ambiance, makes a great place to meet for
-                martinis.
+                Presidio Heights adjoins the Presidio National Recreation Area,
+                a national park consisting of 1,400 acres, incredible vistas and
+                24 miles of hiking trails.
               </p>
             </p>
           </Section>

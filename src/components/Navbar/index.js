@@ -5,9 +5,16 @@ import { BeautyLink, Link } from "../commonStyles"
 import { useStore } from "../../lib/store"
 
 const Navbar = observer(() => {
-  const { menuOpen, scroll, toggleMenu, notPhone, landscape } = useStore()
+  const {
+    menuOpen,
+    scroll,
+    toggleMenu,
+    notPhone,
+    landscape,
+    navbarDark,
+  } = useStore()
   return (
-    <Nav scrolled={scroll !== 0} landscape={landscape}>
+    <Nav scrolled={scroll !== 0} landscape={landscape} navbarDark={navbarDark}>
       {!menuOpen ? (
         <HamburgerMenu onClick={toggleMenu}>
           <i></i>

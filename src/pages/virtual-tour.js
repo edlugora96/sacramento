@@ -1,11 +1,12 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
 import Iframe from "react-iframe"
 import { AnimateStaging } from "../components/AnimateComponent"
-import Header from "../components/Header"
-import headerImageVirtualTourPage from "../assets/gallery/011.jpg"
+// import Header from "../components/Header"
+// import headerImageVirtualTourPage from "../assets/gallery/011.jpg"
 import SEO from "../components/seo"
 import { mediaQuery } from "../lib/utils"
+import { useStore } from "../lib/store"
 
 const VirtualTourView = styled.section`
   width: 100%;
@@ -20,13 +21,18 @@ const VirtualTourView = styled.section`
   }
 `
 
-const VirtualTourPage = ({ data }) => {
+const VirtualTourPage = () => {
+  const { makeDark } = useStore()
+  console.log({ makeDark })
+  useEffect(() => {
+    makeDark()
+  }, [])
   return (
     <>
       <SEO title="Virtual Tour" />
-      <Header degEffect image={headerImageVirtualTourPage}>
+      {/* <Header degEffect image={headerImageVirtualTourPage}>
         <h2>VirtualTour</h2>
-      </Header>
+      </Header> */}
       <VirtualTourView>
         <AnimateStaging>
           <Iframe

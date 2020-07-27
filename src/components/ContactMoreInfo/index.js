@@ -13,9 +13,9 @@ const ContactMoreInfo = () => (
             Compass
           </p>
           <p>
-            135 W Napa St #100
+            1699 Van Ness Avenue
             <br />
-            Sonoma, CA 95476
+            San Francisco, CA 94109
           </p>
           <Link dark href="mailto:Kirk.Economos@Compass.com">
             <span>Kirk.Economos@Compass.com</span>

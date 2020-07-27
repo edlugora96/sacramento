@@ -21,7 +21,8 @@ export const Nav = styled.nav`
   background-repeat: no-repeat;
   color: #fff;
   font-size: 16px;
-  background-color: rgba(0, 0, 0, 0.25);
+  background-color: ${({ navbarDark }) =>
+    navbarDark ? " #000" : "rgba(0, 0, 0, 0.25)"} ;
   background-image: url(${logoNavbar});
   & > * {
     text-decoration: none;
@@ -33,6 +34,7 @@ export const Nav = styled.nav`
     justify-items: center;
     align-items: center;
   }
+  
   ${({ scrolled }) =>
     scrolled &&
     `

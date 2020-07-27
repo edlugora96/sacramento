@@ -155,8 +155,10 @@ const FeaturesPage = () => {
                   In 2018 and 2019, prominent New York interior-designer, Lisa
                   Kanning, transformed this already contemporary and chic condo
                   into a tour-de-force of proportional balance, clean lines,
-                  contrasts of texture and discerning attention to detail. The
-                  3-bedroom, 2-bath, highly functional floor plan features
+                  contrasts of texture and discerning attention to detail.
+                  <br />
+                  <br />
+                  The 3-bedroom, 2-bath, highly functional floor plan features
                   generous room sizes, high vaulted ceilings, exquisite finishes
                   and the natural light of walls of windows and skylights. The
                   home includes a gourmet kitchen with premier appliances, an
