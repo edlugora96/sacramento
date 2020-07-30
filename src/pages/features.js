@@ -5,7 +5,8 @@ import Header from "../components/Header"
 import headerImageFeaturesPage from "../assets/gallery/021.jpg"
 import SEO from "../components/seo"
 import Gallery from "../components/Gallery"
-import { FloorPlantImage } from "../components/floorPlanImage"
+import { FloorPlantImage } from "../components/images"
+import { mediaQuery } from "../lib/utils"
 
 const H2 = styled.h2`
   color: rgba(0, 0, 0, 0.87);
@@ -75,6 +76,9 @@ const P = styled.p`
   & > * {
     padding: 2.5px 0;
   }
+  @media screen and (max-width: ${mediaQuery.phone}px) {
+    margin: 0 0.5rem;
+  }
 `
 
 const MoreInfo = styled.p`
@@ -89,6 +93,9 @@ const MoreInfo = styled.p`
     display: block;
     font-size: 15px;
     text-align: left;
+  }
+  @media screen and (max-width: ${mediaQuery.phone}px) {
+    padding: 0 0.5rem;
   }
 `
 

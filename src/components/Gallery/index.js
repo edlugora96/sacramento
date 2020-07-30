@@ -39,7 +39,7 @@ const NextArrow = props => (
 )
 
 const OverlaySlick = observer(({ openOverlay, setOpenOverlay, children }) => {
-  const { currentMainSlide } = useStore()
+  const { currentMainSlide, phone } = useStore()
   return ReactDOM.createPortal(
     <CSSTransition
       in={openOverlay}
@@ -56,7 +56,7 @@ const OverlaySlick = observer(({ openOverlay, setOpenOverlay, children }) => {
         >
           {children}
         </Slick>
-        <BtnCloseOverlay onClick={() => setOpenOverlay(false)} />
+        <BtnCloseOverlay phone={phone} onClick={() => setOpenOverlay(false)} />
       </SliderOverlay>
     </CSSTransition>,
     document.querySelector("#portal")

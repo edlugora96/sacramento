@@ -1,5 +1,11 @@
 import React from "react"
-import { Footer, ContactSection, PhoneArea, ShareBtnArea } from "./style"
+import {
+  Footer,
+  ContactSection,
+  PhoneArea,
+  ShareBtnArea,
+  CompanyArea,
+} from "./style"
 import { BeautyLink, Link, NiceLink } from "../commonStyles"
 import { AnimateStaging } from "../AnimateComponent"
 
@@ -59,8 +65,12 @@ const ContactInfo = () => (
     <PhoneArea>
       <AnimateStaging>
         <div style={{ marginBottom: "10px" }}>
-          <Link dark to="tel:4159299046">
-            <span>(415) 929-9046</span>
+          <Link dark to="tel:4152716390">
+            <span>(415) 271-6390</span>
+          </Link>
+          <br />
+          <Link dark to="tel:7079319841">
+            <span>(707) 931-9841</span>
           </Link>
         </div>
         <Link dark to="mailto:Kirk.Economos@Compass.com">
@@ -71,16 +81,18 @@ const ContactInfo = () => (
         </Link>
       </AnimateStaging>
     </PhoneArea>
-    <AnimateStaging>
-      <div>Company</div>
-      <p>
-        Kirk and Peggy Economos
-        <br />
-        Compass
-      </p>
-      <p style={{ margin: 0 }}>Kirk Economos DRE#: 00649468</p>
-      <p>Peggy Economos DRE#: 00978773</p>
-    </AnimateStaging>
+    <CompanyArea>
+      <AnimateStaging>
+        <div>Company</div>
+        <p>
+          Kirk and Peggy Economos
+          <br />
+          Compass
+        </p>
+        <p style={{ margin: 0 }}>Kirk Economos DRE#: 00649468</p>
+        <p>Peggy Economos DRE#: 00978773</p>
+      </AnimateStaging>
+    </CompanyArea>
     <ShareBtnArea>
       <AnimateStaging>
         <NiceLink to="/contact" smallX2 normal>

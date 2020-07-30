@@ -1,4 +1,4 @@
-import React, { useEffect } from "react"
+import React, { useEffect, useRef, useState } from "react"
 import styled from "styled-components"
 import Iframe from "react-iframe"
 import { AnimateStaging } from "../components/AnimateComponent"
@@ -6,7 +6,9 @@ import { AnimateStaging } from "../components/AnimateComponent"
 // import headerImageVirtualTourPage from "../assets/gallery/011.jpg"
 import SEO from "../components/seo"
 import { mediaQuery } from "../lib/utils"
-import { useStore } from "../lib/store"
+import { useStore, store } from "../lib/store"
+import { useWindowSize } from "../lib/hooks"
+import { observer } from "mobx-react"
 
 const VirtualTourView = styled.section`
   width: 100%;
@@ -17,16 +19,39 @@ const VirtualTourView = styled.section`
     margin: auto;
   }
   @media screen and (max-width: ${mediaQuery.phone}px) {
-    padding: 0;
+    padding: 7rem 0;
+  }
+  & section > div {
+    display: flex;
   }
 `
 
 const VirtualTourPage = () => {
   const { makeDark } = useStore()
-  console.log({ makeDark })
+  const [iframeSizes, setIframeSizes] = useState({ width: 853, height: 480 })
+  const iframeRef = useRef(null)
+  const parentIframeRef = useRef(null)
+  const whRelation = 853 / 480
   useEffect(() => {
     makeDark()
   }, [])
+  useWindowSize({
+    element: parentIframeRef,
+    cb: ({ height, width }) => {
+      const newHeight = width / whRelation
+      let size = {
+        width: newHeight > height ? height * whRelation : width,
+        height: newHeight > height ? height : newHeight,
+      }
+      // if (width > height) {
+      //   size = {
+      //     width: height * whRelation,
+      //     height,
+      //   }
+      // }
+      setIframeSizes(size)
+    },
+  })
   return (
     <>
       <SEO title="Virtual Tour" />
@@ -35,14 +60,17 @@ const VirtualTourPage = () => {
       </Header> */}
       <VirtualTourView>
         <AnimateStaging>
-          <Iframe
-            width="853"
-            height="480"
-            url="https://my.matterport.com/show/?m=pPCjjLczu6J"
-            frameBorder="0"
-            allowFullScreen
-            allow="xr-spatial-tracking"
-          ></Iframe>
+          <div style={{ height: "calc(100vh - 8rem)" }} ref={parentIframeRef}>
+            <iframe
+              ref={iframeRef}
+              width={iframeSizes.width}
+              height={iframeSizes.height}
+              src=" https://my.matterport.com/show/?m=pPCjjLczu6J "
+              frameborder="0"
+              allowfullscreen
+              allow="xr-spatial-tracking"
+            ></iframe>
+          </div>
         </AnimateStaging>
       </VirtualTourView>
     </>

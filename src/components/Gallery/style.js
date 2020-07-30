@@ -97,12 +97,22 @@ export const ButtonCloseOverlay = styled.button`
   padding: 8px 22px;
   font-size: 0.9375rem;
 
-  left: 50%;
-  bottom: 25px;
   height: auto;
   z-index: 12;
   position: fixed;
+  ${({ phone }) =>
+    phone
+      ? `
+  top: 25px;
+  left: 99%;
+  transform: translate(-100%, 0) scale(0.7);
+  `
+      : `
+  left: 50%;
   transform: translate(-50%, 0);
+  bottom: 25px;
+    
+    `}
 
   -webkit-appearance: button;
 

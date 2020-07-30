@@ -10,7 +10,6 @@ import {
   contactSchemas,
 } from "../../lib/schemas"
 import Recaptcha from "react-recaptcha"
-import app from "../../lib/utils/socketClient"
 
 const ContactForm = () => {
   const recaptcha = useRef(null)
@@ -35,26 +34,34 @@ const ContactForm = () => {
   const handlerSubmit = () => {
     const resolve = {
       origin: "3439sacramento.com",
-      name: name.value,
+      firstName: name.value,
       email: email.value,
-      message: message.value,
+      text: message.value,
       phone: phone.value,
       suscribe,
     }
     if (!recaptchaLoad || !recaptchaVerify) {
       alert("Are you a human? Please verify it.")
-    } else if (
+    }
+    if (
       recaptchaLoad &&
       recaptchaVerify &&
       !contactSchemas.validate(resolve).error
     ) {
       recaptcha.current.reset()
       setRecaptchaVerify(false)
-      app
-        .service("messages")
-        .create(resolve)
+      fetch("https://propertysonoma.com/notify", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(resolve),
+      })
         .then(() => alert("Thank you, we have received your message"))
-        .catch(() => alert("500 Server Error. Please try again."))
+        .catch(mes =>
+          alert("Error: " + mes.name + " " + mes.code + " " + mes.message)
+        )
     }
   }
   return (

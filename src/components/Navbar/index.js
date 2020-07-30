@@ -41,15 +41,15 @@ const Navbar = observer(() => {
 
       {notPhone && (
         <>
+          <BeautyLink to="/neighborhood">
+            <span>Neighborhood</span>
+          </BeautyLink>
           <BeautyLink to="/map">
             <span>Map</span>
           </BeautyLink>
           <BeautyLink to="/contact">
             <span>Contact</span>
           </BeautyLink>
-          <Link href="tel:4152716390">
-            <span>(415) 271-6390</span>
-          </Link>
         </>
       )}
     </Nav>

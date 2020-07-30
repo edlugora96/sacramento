@@ -12,6 +12,12 @@ export const Footer = styled.footer`
     display: flex;
     flex-flow: column;
   }
+  & section:last-child {
+    grid-area: shareBtn;
+  }
+  & section:nth-child(2) {
+    grid-area: address;
+  }
   & * {
     line-height: 24px;
   }
@@ -44,4 +50,8 @@ export const PhoneArea = styled.p`
 export const ShareBtnArea = styled.section`
   width: 100%;
   grid-area: shareBtn;
+`
+
+export const CompanyArea = styled.section`
+  grid-area: company;
 `

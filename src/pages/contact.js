@@ -42,7 +42,7 @@ const Contact = () => {
             <ContactForm />
             <ContactMoreInfo />
           </div>
-          <GoogleMaps center={{ lat: 37.791167, lng: -122.422945 }} zoom={14} />
+          <GoogleMaps zoom={18} center={{ lat: 37.787816, lng: -122.44945 }} />
         </ContactView>
       </AnimateStaging>
       <br />

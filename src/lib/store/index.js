@@ -50,6 +50,13 @@ export const store = observable(
       }
       return false
     },
+
+    get landscapeAlways() {
+      if (store.windowWidth > store.windowHeight) {
+        return true
+      }
+      return false
+    },
     get notPhone() {
       if (store.windowWidth <= mediaQuery.phone) {
         return false
@@ -77,6 +84,7 @@ export const store = observable(
     notPhone: computed,
     phone: computed,
     landscape: computed,
+    landscapeAlways: computed,
   }
 )
 
