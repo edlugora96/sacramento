@@ -9,7 +9,7 @@
     "@feathersjs/feathers": "3.3.1",
     "@feathersjs/socketio-client": "1.2.1",
     "dotenv": "^8.2.0",
-    "gatsby": "^2.23.12",
+    "gatsby": "^4.25.7",
     "gatsby-cli": "^2.12.64",
     "gatsby-image": "^2.4.9",
     "gatsby-plugin-manifest": "^2.4.14",
